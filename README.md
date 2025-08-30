@@ -1,2 +1,2 @@
-# UWP-For-Windows-Phone
-A documentation for Windows Phone compilatioon
+## UWP For Windows Phone ##
+Documentation for Windows Phone compilatioon
