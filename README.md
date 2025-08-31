@@ -28,7 +28,7 @@ Alright, let's get this shit setup.
 
 1. Install the Windows SDK you downloaded earlier. (This takes fucking forever btw.)
 2. Install VS2017.  
-- Make sure none of the items circled in red are installed. (I dont know if this actually breaks anything but it works without them.)
+- Make sure none of the items circled in red are installed. (I don't know if this actually breaks anything but it works without them.)
     <img width="900" alt="Untitled" src="https://github.com/user-attachments/assets/bc3364cd-8c35-469a-9888-09f3c22b76ab" />
 
 ---
