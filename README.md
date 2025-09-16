@@ -104,3 +104,52 @@ Final step! Let's get your app installed.
    <img width="720" alt="wp_ss_20250831_0005" src="https://github.com/user-attachments/assets/fd7f540d-59ff-4758-bca8-3a887a8eb327" />
 ---
 That's it! Your new app should run (assuming you haven't made any programming errors).
+
+---
+## UPDATE (16/9/2025): How to develop games! ##
+After figuring out how to make games for Windows Phone, I'm happy to announce an update this guide doing exactly that.  
+I'm still not sure how to do complex 3D games (or any 3D games) so this guide is only for 2D games.  
+Let's do this!  
+  
+## Step 1.0: Prerequisites ##
+1. **[Monogame V3.7](https://github.com/MonoGame/MonoGame/releases/download/v3.7/MonoGameSetup.exe)**  
+   As far as I know, this is the last version to support Windows Phone.
+2. Visual Studio  
+   I still recommend Visual Studio 2017, but you *can* switch over to VS2022 after project creation.
+
+## Step 2.0: Setup ##
+Open Visual Studio and select "Create new project."
+<img width="720" alt="image" src="https://github.com/user-attachments/assets/27ed512d-6fd0-4bc9-be14-86e69985e603" />  
+Select "Monogame Windows 10 Universal (Core Application) Project".  
+**CRITICAL: Set the target version to the same one as normal apps.**
+
+## Step 3.0: Developing Games ##
+This is largely up to you on how this is done so I'm going to cover the basics.  
+
+Use the Monogame Pipeline app installed on your computer to add content to the game.  
+<img width="720" alt="image" src="https://github.com/user-attachments/assets/0248d962-cffe-4142-aaf5-f85c57b3b29a" />
+- **To add fonts**  
+  Select Add New item in the toolbar.  
+  Select "SpriteFont Description" as the file type. Give it a name, I usually use the size of the font then the font name. (e.g. SmallArial)  
+  <img width="356" height="278" alt="image" src="https://github.com/user-attachments/assets/9205e131-069b-4c85-91eb-a9bca58b468b" />  
+  When this is done, right click on the file and select "Open Containing Directory".
+  You should see your new SpriteFont here.
+  <img width="720" alt="image" src="https://github.com/user-attachments/assets/ded18be1-ec39-4c30-8e0f-e21571731da2" />  
+  Using any text editor (I'm using Notepad++ here) edit the file and save the file.
+  <img width="720" alt="image" src="https://github.com/user-attachments/assets/66c254d6-3fea-4398-90f4-ac611449818b" />  
+  **Note: if using a custom font, you MUST place the font alongside the spritefont file, however you do not need to add it in the pipeline. The font specified in the spritefont file MUST be the name of the file.**
+- **To add assets (Music, Sprites, Images, etc.)**  
+  Right click on the project in the project. (The one highlighted in blue here)  
+  <img width="720" alt="image" src="https://github.com/user-attachments/assets/df1372ee-5488-480e-acb1-77c3c88f81df" />  
+  Select "Add" then "Existing Item"  
+  <img width="500" alt="image" src="https://github.com/user-attachments/assets/ea8ab641-f797-412e-8f66-8971a2c74fc7" />  
+  Add your assets, I recommend using PNG for any images, including sprites.  
+  - To use your assets, press build from the toolbar or press F6.  
+---
+If using subdirectories like in the screenshots, you can access them by using the folder name then the item name.  
+<img width="720" alt="image" src="https://github.com/user-attachments/assets/4a78cae9-c104-4fd9-b94f-a41b7e420008" />   
+In this screenshot the example would be (Fonts/Font). Note the extension is not included in this.
+
+---
+To compile your app, you must also add some icons to the Assets folder in Visual Studio. Attempt to build once and the errors will tell you what is needed.  
+Other than that, you compile and install the app the same way you did in section 5 of the previous guide.
