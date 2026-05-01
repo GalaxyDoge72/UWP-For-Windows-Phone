@@ -169,4 +169,184 @@ To run this emulator, you will need to have the following:
 
 ## Step 2.0: Setup ##
 1. Obtain the installer from [here](https://go.microsoft.com/fwlink/p/?linkid=615095).
-2. Wait for the installer to finish. 
+2. Wait for the installer to finish. ## UWP For Windows Phone ##
+Documentation for Windows Phone compilation.  
+This guide will only cover Windows Phone 10, simply because I do not have a Windows 8 phone.
+
+---
+
+## Step 1.0: Prerequisites ##
+So you've stumbled across a Windows Phone, and decided to start development. I'm here to help.
+Here's some things you'll need:
+1. **[Visual Studio *2017*](https://aka.ms/vs/15/release/vs_community.exe)** (Things like Visual Studio 2022 do not support working with UWP apps at a version of the SDK which we need.)  
+    Don't worry about VS2017 deleting any VS2022 projects; they can both exist alongside each other.
+
+2. The Windows SDK (Windows Phone 10 only works with SDKs of a certain version.)  
+    I recommend the **[Build 16299](https://go.microsoft.com/fwlink/p/?linkid=864422)** version simply because it works.
+3. A physical device to work with. (I have a Lumia 650 and there *is* an emulator for Windows Phone, but I haven't gotten it to work.)
+4. **C# and XAML Knowledge**  
+    (This is optional, I basically have no idea what I'm doing. VS2017 also comes with a version of Blend that works with Windows Phone so it makes it easier to design UIs.)
+5. **Time and Patience**  
+    Windows Phone is extremely temperamental, so I suggest having some sort of patience and willingness to work out bugs.
+
+
+Congrats! That's all the stuff we'll need so far.
+
+---
+
+## Step 2.0: Setup ##
+Alright, let's get this shit setup.  
+
+1. Install the Windows SDK you downloaded earlier. (This takes fucking forever btw.)
+2. Install VS2017.  
+- Make sure none of the items circled in red are installed. (I don't know if this actually breaks anything but it works without them.)
+    <img width="900" alt="Untitled" src="https://github.com/user-attachments/assets/bc3364cd-8c35-469a-9888-09f3c22b76ab" />
+
+---
+
+## Step 2.1: Windows Phone Setup ##
+Now let's set up the phone for usage. (My phone has been hacked so mine might look a bit different but it should still work either way.)
+1. Enable Developer Mode.  
+   <img width="700" alt="enableDev" src="https://github.com/user-attachments/assets/abccc0a7-03f5-4c55-a629-8fda2290c6ca" />
+2. Enable Remote Diagnostics. **This is critical for installing apps.**  
+   <img width="300" alt="wp_ss_20250831_0004" src="https://github.com/user-attachments/assets/06d504fc-fab1-47ed-8ac9-a7173caef7d9" />
+3. Check that the phone can be reached.  
+   - Using the web address the phone gives you, access that in the computer's web browser.
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/5e207376-7861-44c6-b6a8-8e622626e331" />
+
+---
+We're ready to start developing!
+
+## Step 3.0: Developing Apps ##
+Let's get started.  
+The last version of Windows Phone to ship was build 10.0.15254.603 so that's what we'll be compiling to.
+
+1. Open VS2017.  
+   You should see this screen.  
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/01eb7cc5-39b7-45df-8abc-4d748c2a0c04" />  
+   - Under "New Project", select "Create New Project".  
+2. Select Project Template.  
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/4b7a3d6b-8499-4e78-8c37-5166466e1b73" />  
+   - Under the "Visual C#" Category, select "Blank App (Universal Windows)"  
+3. **Set correct SDK version. (CRITICAL)**   
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/9df30fe4-09cf-4cae-9bb5-47012ab53920" />  
+   - Set Target Version to "Windows 10 Fall Creators Update"
+   - Minimum version should automatically become "Windows 10 November Update"  
+       
+   Correct Setup:  
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/ddc6c2ac-d1ae-456f-87c9-8e48e2b32298" />  
+**Note: If you don't see these options, you haven't installed the SDK correctly.**
+---
+Congrats, you can now start working on your app! Select MainPage.xaml to start working.
+
+## Step 4.0: Compiling Apps ##
+Almost there! Now we have to compile our app.  
+Here's how:  
+1. Right click the project. (Its name will be "*appName* (Universal Windows)" with a little green box around a C#.)  
+   <img width="500" alt="image" src="https://github.com/user-attachments/assets/519a4978-954c-4a49-8046-eceaa302f665" />
+2. In the menu, click "Store" and then "Create App Packages".  
+   <img width="700"  alt="image" src="https://github.com/user-attachments/assets/5d276ed2-988a-4a85-95ef-5beb2c356e14" />
+3. In the window that pops up, select "I want to create packages for sideloading." and click "Next".  
+   <img width="600" alt="image" src="https://github.com/user-attachments/assets/0f6a13e5-c999-4d3f-a208-4b09155912d8" />
+4. In the table, uncheck both "x86" and "x64".    
+    - Make sure "ARM" (Not "ARM64") is checked.  
+   <img width="600"  alt="image" src="https://github.com/user-attachments/assets/a9392756-ea48-463f-b0ec-6131b3ad7927" />
+5. Hit create and wait for compilation.
+
+---
+We're now ready to install your brand new app!
+
+## Step 5.0: Installing Apps ##
+Final step! Let's get your app installed.  
+1. After compilation is finished, your app will be in the project's folder. (Do step 4's first part but click on "Open folder in File Explorer" instead.)
+
+2. Navigate in the "AppPackages" folder and there should only be one folder in there. Navigate into that folder.  
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/b59f49e1-dc66-4e00-b141-7a16e550c1cb" />
+3. Access the website from Step 2.1 and select the app manager column on the left.  
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/5e207376-7861-44c6-b6a8-8e622626e331" />
+4. Under "App Package" in the "Install App" column, select the appxbundle.  
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/b257eb49-6208-49b6-98af-823e36019c83" />
+5. Add dependancies by pressing "Add dependency" and navigating to the "Dependencies" subfolder and then the "ARM" subfolder.
+   - Make sure it's the "ARM" folder and not the "ARM64" folder.
+   - Do this for all packages in the "ARM" folder.  
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/d5c39fcd-5de0-4b8c-978d-f45bbe55ac99" />
+6. Select "Go".
+   - If all goes to plan, it should install fine and you should see your new app.
+   <img width="720" alt="wp_ss_20250831_0005" src="https://github.com/user-attachments/assets/fd7f540d-59ff-4758-bca8-3a887a8eb327" />
+---
+That's it! Your new app should run (assuming you haven't made any programming errors).
+
+---
+# UPDATE (16/9/2025): How to develop games! #
+After figuring out how to make games for Windows Phone, I'm happy to announce an update this guide doing exactly that.  
+I'm still not sure how to do complex 3D games (or any 3D games) so this guide is only for 2D games.  
+Let's do this!  
+  
+## Step 1.0: Prerequisites ##
+1. **[Monogame V3.7](https://github.com/MonoGame/MonoGame/releases/download/v3.7/MonoGameSetup.exe)**  
+   As far as I know, this is the last version to support Windows Phone.
+2. Visual Studio  
+   I still recommend Visual Studio 2017, but you *can* switch over to VS2022 after project creation.
+
+## Step 2.0: Setup ##
+Open Visual Studio and select "Create new project."
+<img width="720" alt="image" src="https://github.com/user-attachments/assets/27ed512d-6fd0-4bc9-be14-86e69985e603" />  
+Select "Monogame Windows 10 Universal (Core Application) Project".  
+**CRITICAL: Set the target version to the same one as normal apps.**
+
+## Step 3.0: Developing Games ##
+This is largely up to you on how this is done so I'm going to cover the basics.  
+
+Use the Monogame Pipeline app installed on your computer to add content to the game.  
+<img width="720" alt="image" src="https://github.com/user-attachments/assets/0248d962-cffe-4142-aaf5-f85c57b3b29a" />
+- **To add fonts**  
+  Select Add New item in the toolbar.  
+  Select "SpriteFont Description" as the file type. Give it a name, I usually use the size of the font then the font name. (e.g. SmallArial)  
+  <img width="356" height="278" alt="image" src="https://github.com/user-attachments/assets/9205e131-069b-4c85-91eb-a9bca58b468b" />  
+  When this is done, right click on the file and select "Open Containing Directory".
+  You should see your new SpriteFont here.
+  <img width="720" alt="image" src="https://github.com/user-attachments/assets/ded18be1-ec39-4c30-8e0f-e21571731da2" />  
+  Using any text editor (I'm using Notepad++ here) edit the file and save the file.
+  <img width="720" alt="image" src="https://github.com/user-attachments/assets/66c254d6-3fea-4398-90f4-ac611449818b" />  
+  **Note: if using a custom font, you MUST place the font alongside the spritefont file, however you do not need to add it in the pipeline. The font specified in the spritefont file MUST be the name of the file.**
+- **To add assets (Music, Sprites, Images, etc.)**  
+  Right click on the project in the project. (The one highlighted in blue here)  
+  <img width="720" alt="image" src="https://github.com/user-attachments/assets/df1372ee-5488-480e-acb1-77c3c88f81df" />  
+  Select "Add" then "Existing Item"  
+  <img width="500" alt="image" src="https://github.com/user-attachments/assets/ea8ab641-f797-412e-8f66-8971a2c74fc7" />  
+  Add your assets, I recommend using PNG for any images, including sprites.  
+  - To use your assets, press build from the toolbar or press F6.  
+---
+If using subdirectories like in the screenshots, you can access them by using the folder name then the item name.  
+<img width="720" alt="image" src="https://github.com/user-attachments/assets/4a78cae9-c104-4fd9-b94f-a41b7e420008" />   
+In this screenshot the example would be (Fonts/Font). Note the extension is not included in this.
+
+---
+To compile your app, you must also add some icons to the Assets folder in Visual Studio. Attempt to build once and the errors will tell you what is needed.  
+Other than that, you compile and install the app the same way you did in section 5 of the previous guide.
+
+# UPDATE (1/05/2026): How to setup the Windows Mobile 10 Emulator #
+After a while of digging around, I managed to find the download for the emulator.
+
+## Step 1.0: Requirements ##
+To run this emulator, you will need to have the following:
+1. Windows 8.1 Pro / Windows 10 Pro / Windows 11 Pro
+2. A 64-bit processor.
+    - This processor **must** support Second Level Address Translation (SLAT), more commonly known as "nested paging".
+    - AMD CPUs made after 2003 support SLAT. Intel CPUs made after 2008 support SLAT, only on the Core i3, i5, i7, and i9 processors.
+4. At least 4GB of RAM, but I would recommend more.
+5. Hyper-V. This is critical for the emulator.
+6. At least 6GB of free disk space.
+
+## Step 2.0: Setup ##
+1. Obtain the installer from [here](https://go.microsoft.com/fwlink/p/?linkid=615095).
+2. Wait for the installer to finish.
+
+## Step 3.0: Debugging ##
+1. In the Targets menu of VS2017 switch from ARM to x86.
+2. Find the device you wish to emulate
+3. Hit run.
+   - If you get this message: <img width="466" height="199" alt="image" src="https://github.com/user-attachments/assets/28787eb3-0a8e-4abf-9cf9-f6cce5fd12c7" />
+   Simply select retry and give admin privledges if needed.
+4. Wait for the device to boot, this may take a while depending on your CPU's power. 
+   - <img height="450" alt="image" src="https://github.com/user-attachments/assets/d1fe10f6-0db6-44d9-875c-147312668abd" />
