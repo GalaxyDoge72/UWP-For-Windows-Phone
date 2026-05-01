@@ -106,7 +106,7 @@ Final step! Let's get your app installed.
 That's it! Your new app should run (assuming you haven't made any programming errors).
 
 ---
-## UPDATE (16/9/2025): How to develop games! ##
+# UPDATE (16/9/2025): How to develop games! #
 After figuring out how to make games for Windows Phone, I'm happy to announce an update this guide doing exactly that.  
 I'm still not sure how to do complex 3D games (or any 3D games) so this guide is only for 2D games.  
 Let's do this!  
@@ -153,3 +153,20 @@ In this screenshot the example would be (Fonts/Font). Note the extension is not 
 ---
 To compile your app, you must also add some icons to the Assets folder in Visual Studio. Attempt to build once and the errors will tell you what is needed.  
 Other than that, you compile and install the app the same way you did in section 5 of the previous guide.
+
+# UPDATE (1/05/2026): How to setup the Windows Mobile 10 Emulator #
+After a while of digging around, I managed to find the download for the emulator.
+
+## Step 1.0: Requirements ##
+To run this emulator, you will need to have the following:
+1. Windows 8.1 Pro / Windows 10 Pro / Windows 11 Pro
+2. A 64-bit processor.
+    - This processor **must** support Second Level Address Translation (SLAT), more commonly known as "nested paging".
+    - AMD CPUs made after 2003 support SLAT. Intel CPUs made after 2008 support SLAT, only on the Core i3, i5, i7, and i9 processors.
+4. At least 4GB of RAM, but I would recommend more.
+5. Hyper-V. This is critical for the emulator.
+6. At least 6GB of free disk space.
+
+## Step 2.0: Setup ##
+1. Obtain the installer from [here](https://go.microsoft.com/fwlink/p/?linkid=615095).
+2. Wait for the installer to finish. 
