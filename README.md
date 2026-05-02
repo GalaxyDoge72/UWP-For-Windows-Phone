@@ -344,9 +344,27 @@ To run this emulator, you will need to have the following:
 
 ## Step 3.0: Debugging ##
 1. In the Targets menu of VS2017 switch from ARM to x86.
-2. Find the device you wish to emulate
-3. Hit run.
+2. Find the device you wish to emulate.
+    <img width="480" height="96" alt="image" src="https://github.com/user-attachments/assets/a17480d4-f9c1-4de2-9bcb-ce688678369b" />
+4. Hit run.
    - If you get this message: <img width="466" height="199" alt="image" src="https://github.com/user-attachments/assets/28787eb3-0a8e-4abf-9cf9-f6cce5fd12c7" />
    Simply select retry and give admin privledges if needed.
-4. Wait for the device to boot, this may take a while depending on your CPU's power. 
-   - <img height="450" alt="image" src="https://github.com/user-attachments/assets/d1fe10f6-0db6-44d9-875c-147312668abd" />
+5. Wait for the device to boot, this may take a while depending on your CPU's power. 
+    <img width="450" alt="image" src="https://github.com/user-attachments/assets/d1fe10f6-0db6-44d9-875c-147312668abd" />
+6. Deployment will fail with some unknown error. This is normal.
+    <img width="548" height="92" alt="image" src="https://github.com/user-attachments/assets/af8ecafe-122b-492d-9d1e-c9d275c30a59" />
+7.    Once the device is ready, open the settings.
+      - From here, navigate to "Update & Security", then "For developers".
+     <img height="500" alt="image" src="https://github.com/user-attachments/assets/794d2c5a-6f95-4b0f-a842-99b608847181" />
+8.  **CRITICAL**: Switch from "Developer mode" to "Sideload apps" and accept the warning.
+    <img height="500" alt="image" src="https://github.com/user-attachments/assets/eaeaac46-7323-423f-a9d4-19b1bb020b33" />
+9. Press the run button on VS2017
+    - <img width="494" height="86" alt="image" src="https://github.com/user-attachments/assets/3a428f08-e1c6-4b81-b0d4-d25085365b87" />
+10. This should fail to build.
+    - If you see this message, continue on:
+      <img width="1057" height="99" alt="image" src="https://github.com/user-attachments/assets/6d3ff100-95b7-4fea-86fa-5ef31cb78211" />
+11. On the Emulator, switch back to "Developer mode"
+    - <img width="439" height="781" alt="XDE 02-00-13 AM Sunday 03 May 2026" src="https://github.com/user-attachments/assets/8e2835a3-0615-4d5d-a215-059bd2e63850" />
+12. Press the run button again.
+    - <img width="494" height="86" alt="image" src="https://github.com/user-attachments/assets/3a428f08-e1c6-4b81-b0d4-d25085365b87" />
+13. Voila!
