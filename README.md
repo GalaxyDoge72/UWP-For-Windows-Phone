@@ -359,12 +359,12 @@ To run this emulator, you will need to have the following:
 8.  **CRITICAL**: Switch from "Developer mode" to "Sideload apps" and accept the warning.
     <img height="500" alt="image" src="https://github.com/user-attachments/assets/eaeaac46-7323-423f-a9d4-19b1bb020b33" />
 9. Press the run button on VS2017
-    - <img width="494" height="86" alt="image" src="https://github.com/user-attachments/assets/3a428f08-e1c6-4b81-b0d4-d25085365b87" />
+    <img width="494" height="86" alt="image" src="https://github.com/user-attachments/assets/3a428f08-e1c6-4b81-b0d4-d25085365b87" />
 10. This should fail to build.
     - If you see this message, continue on:
       <img width="1057" height="99" alt="image" src="https://github.com/user-attachments/assets/6d3ff100-95b7-4fea-86fa-5ef31cb78211" />
 11. On the Emulator, switch back to "Developer mode"
-    - <img width="439" height="781" alt="XDE 02-00-13 AM Sunday 03 May 2026" src="https://github.com/user-attachments/assets/8e2835a3-0615-4d5d-a215-059bd2e63850" />
+    <img width="439" height="781" alt="XDE 02-00-13 AM Sunday 03 May 2026" src="https://github.com/user-attachments/assets/8e2835a3-0615-4d5d-a215-059bd2e63850" />
 12. Press the run button again.
-    - <img width="494" height="86" alt="image" src="https://github.com/user-attachments/assets/3a428f08-e1c6-4b81-b0d4-d25085365b87" />
+    <img width="494" height="86" alt="image" src="https://github.com/user-attachments/assets/3a428f08-e1c6-4b81-b0d4-d25085365b87" />
 13. Voila!
